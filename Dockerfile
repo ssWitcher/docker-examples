@@ -1,0 +1,9 @@
+FROM node:10.16.3
+ENV ACCESS_KEY_AWS_DEV=AKIA5ZXCSBZQ2GUZFBVV
+ENV ACCESS_KEY_AWS_PROD=AKIA5ZXCSBZQ2GUZFBVV
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+COPY ./ /home/node/app
+RUN npm install
+EXPOSE 80
+ENTRYPOINT [ "npm","start"]
